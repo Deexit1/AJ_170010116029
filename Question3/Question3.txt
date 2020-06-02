@@ -36,7 +36,7 @@ public class First extends HttpServlet {
             System.out.println("Here");
             ss.setAttribute("Er", "Welcome 170010116029 Student");
         }
-        ss.setAttribute("Er", "170010116052");
+        ss.setAttribute("Er", "170010116029");
         response.sendRedirect("Second.jsp");
     }
 
