@@ -1,0 +1,39 @@
+Answer1: Class.forName("com.mysql.jdbc.Driver");
+
+Answer2: adit_conn_170010116029 = DriverManager.getConnection("jdbc:mysql://localhost:3306/2160707_170010116029","root","170010116029");
+
+Answer3: Statement adit_conn_dState = adit_conn_170010116029.createStatement();
+
+Answer4: String query = "create table JDBC_tbl(RECORD INT, DESCRIPTION VARCHAR(16), QUANTITY INT, PRICE FLOAT)";
+
+	 adit_conn_dState.execute(query);
+
+Answer5:  String query1,query2,query3,query4;
+     	  query1 = "insert into JDBC_tbl values(100,'ball',21,4.99)";
+    	  query2 = "insert into JDBC_tbl values(101,'dhsg',23,99.12)";
+          query3 = "insert into JDBC_tbl values(102,'rgedw',40,34.99)";
+          query4 = "insert into JDBC_tbl values(103,'qwrete',30,92.9)";
+          adit_conn_dState.addBatch(query1);
+          adit_conn_dState.addBatch(query2);
+          adit_conn_dState.addBatch(query3);
+          adit_conn_dState.addBatch(query4);
+          int[] i=adit_conn_dState.executeBatch();
+
+Answer6: String sql = "select PRICE from JDBC_tbl";
+
+Answer7: ResultSet dResult;
+         dResult = adit_conn_dState.executeQuery(sql);
+         while(dResult.next()){
+                System.out.println(dResult.getFloat("PRICE"));
+         }
+
+Answer8: getXXX( ) methods can access columns by index or name.
+
+Answer9: F
+
+Answer10: An "x" indicates that the getXXX method may legally be used to retrieve the given JDBC type.
+	  An " X " indicates that the getXXX method is recommended for retrieving the given JDBC type.
+
+
+Answer11: String newsale = "UPDATE COFFEES SET SALES=150 where COF_NAME='Expresso'";
+	  int i = st.executeUpdate(newsale);
